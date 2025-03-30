@@ -22,3 +22,24 @@ function fetchProductsThen() {
 }
 
 fetchProductsThen();
+
+// Task 3: Fetch Products with Async/Await
+async function fetchProductsAsync() {
+    try {
+        const response = await fetch(apiLink);
+        if (!response.ok) {
+            throw new Error('The Network is Down!');
+        }
+        const products = await response.json();
+        displayProducts(products);
+    } 
+    
+    catch (error) {
+        handleError(error);
+    }
+}
+
+function displayProducts(products) {
+    products.forEach(product => {
+        console.log(product.fields.name);
+})};
