@@ -37,9 +37,9 @@ async function fetchProductsAsync() {
     catch (error) {
         handleError(error);
     }
-}
+} // Created a function that fetches the data using async/await and handles the errors.
 
 function displayProducts(products) {
     products.forEach(product => {
         console.log(product.fields.name);
-})};
+})}; // Created a function to display products names.
